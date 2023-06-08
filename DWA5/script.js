@@ -35,7 +35,7 @@ form.addEventListener("submit", (event) => {
     }
 
     function displayCriticalErrorMessage() {
-        result.innerHTML = `<div style="display: flex; justify-content: center; align-items: center; height: 200px; background-color: #ffcccc; color: #333; font-size: 18px; font-weight: bold;">Something critical went wrong. Please reload the page</div>`;
+        document.body.innerHTML = `<div style="display: flex; justify-content: center; align-items: center; height: 200px; background-color: #ffcccc; color: #333; font-size: 18px; font-weight: bold;">Something critical went wrong. Please reload the page</div>`;
       }
       
 
