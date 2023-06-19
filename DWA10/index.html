@@ -5,9 +5,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Tally Count</title>
-    <script src="/scripts.js" type="module" defer></script>
+    <script src="scripts.js" type="module" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.4.0/dist/themes/light.css" />
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.4.0/dist/shoelace-autoloader.js"></script>
 </head>
 
 <body>
@@ -37,15 +40,16 @@
     </aside>
 
     <main class="counter">
-        <input class="counter_value" data-key="number" readonly value="0"/>
+        <input class="counter_value" data-key="number" readonly value="0" />
         <div class="counter_action">
             <button data-key="subtract" class="counter_botton counter_botton_fisrt">-</button>
             <button data-key="add" class="counter_botton">+</button>
         </div>
     </main>
-    
+
     <footer class="footer">
-        Inspired by <a class="footer_link" href="http://tallcount.app/">Tally Count</a> Note that this is merely a pratice project for learning JavaScript.
+        Inspired by <a class="footer_link" href="http://tallcount.app/">Tally Count</a> Note that this is merely a
+        pratice project for learning JavaScript.
     </footer>
 </body>
 
