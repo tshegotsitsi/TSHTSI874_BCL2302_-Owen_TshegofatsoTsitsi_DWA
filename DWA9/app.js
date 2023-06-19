@@ -1,28 +1,35 @@
+// Define a custom element for the book preview
 class BookPreview extends HTMLElement {
   constructor() {
     super();
+    // Create a shadow DOM for the element
     this.attachShadow({ mode: "open" });
   }
 
   connectedCallback() {
+    // Render the component when it's connected to the document
     this.render();
   }
 
   static get observedAttributes() {
+    // Specify the attributes to observe for changes
     return ["data-book"];
   }
 
-  attributeChangedCallback(name) {
+  attributeChangedCallback() {
+    // Re-render the component when the observed attribute changes
     this.render();
   }
-  
-render() {
+
+  render() {
+    // Parse the book data from the "data-book" attribute
     const book = JSON.parse(this.getAttribute("data-book"));
     const { author, image, title } = book;
 
+    // Set the content of the shadow DOM
     this.shadowRoot.innerHTML = `
       <style>
-        .preview {
+        :host {
           display: flex;
           align-items: center;
           padding: 10px;
@@ -43,28 +50,23 @@ render() {
         }
 
         .preview__title {
-          font-size: 18px;
           font-weight: bold;
-          margin: 0;
+          margin-bottom: 4px;
+          color: rgba(var(--color-dark), 0.8);
         }
 
         .preview__author {
-          font-size: 14px;
-          margin: 5px 0;
+          color: rgba(var(--color-dark), 0.4);
         }
       </style>
-
-      <button class="preview">
-        <img class="preview__image" src="${image}" />
-        <div class="preview__info">
-          <h3 class="preview__title">${title}</h3>
-          <div class="preview__author">${author}</div>
-        </div>
-      </button>
-
-      
+      <img class="preview__image" src="${image}" alt="Book Cover">
+      <div class="preview__info">
+        <h3 class="preview__title">${title}</h3>
+        <p class="preview__author">${author}</p>
+      </div>
     `;
   }
 }
 
+// Define the custom element "book-preview" and associate it with the BookPreview class
 customElements.define("book-preview", BookPreview);
