@@ -1,3 +1,4 @@
+
 // Define a custom element for the book preview
 class BookPreview extends HTMLElement {
   constructor() {
@@ -24,7 +25,7 @@ class BookPreview extends HTMLElement {
   render() {
     // Parse the book data from the "data-book" attribute
     const book = JSON.parse(this.getAttribute("data-book"));
-    const { author, image, title } = book;
+    const {image, title ,author} = book;
 
     // Set the content of the shadow DOM
     this.shadowRoot.innerHTML = `
