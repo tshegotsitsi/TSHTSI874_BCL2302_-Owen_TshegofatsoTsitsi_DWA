@@ -83,6 +83,7 @@ body {
 .reset{
     font-size: larger;
     background-color: #424250;
+    color: #ffffff;
 }
 
 .counter_botton:active {

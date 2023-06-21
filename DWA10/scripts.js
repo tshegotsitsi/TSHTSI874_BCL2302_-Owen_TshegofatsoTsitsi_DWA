@@ -1,5 +1,5 @@
-const MAX_NUMBER = 20
-const MIN_NUMBER = -20
+const MAX_NUMBER = 10
+const MIN_NUMBER = -10
 
 
 const number = document.querySelector('[data-key="number"]')
@@ -9,8 +9,9 @@ const reset = document.querySelector('[data-key="reset"]');
 
 const resetHandler = () => {
     number.value = 0;
-    subtract.disabled = true;
+    subtract.disabled = false;
     add.disabled = false;
+    alert("the counter has been reset")
 }
 
 
@@ -44,4 +45,6 @@ subtract.addEventListener('click', subtractHandler)
 
 add.addEventListener('click', addHandler)
 
-resetButton.addEventListener("click", resetHandler);
+reset.addEventListener("click", resetHandler);
+
+reset.subtractEventListener("click", resetHandler);
