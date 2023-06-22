@@ -33,7 +33,7 @@ const createStore = (reducer) => {
         return state;
     }
   };
-  
+
   // Create the store with the tallyReducer
   const store = createStore(tallyReducer);
   
