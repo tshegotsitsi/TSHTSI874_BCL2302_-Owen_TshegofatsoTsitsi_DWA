@@ -38,10 +38,9 @@ class TallyApp extends LitElement {
       text-align: center;
       font-size: 6rem;
       font-weight: 900;
-      background: none;
       background-color: var(--color-green);
       color: var(--color-dark-grey);
-      border-width: 0;
+      border: none;
       border-bottom: 1px solid var(--color-light-grey);
     }
 
@@ -50,24 +49,25 @@ class TallyApp extends LitElement {
     }
 
     .counter__button {
-      background: none;
-      width: 50%;
-      border-width: 0;
+      flex-grow: 1;
+      background-color: transparent;
+      border: none;
       color: var(--color-white);
       font-size: 3rem;
       height: 10rem;
       border-bottom: 1px solid var(--color-light-grey);
       transition: transform 0.3s;
-      transform: translateY(0);
       font-weight: bold;
+      cursor: pointer;
     }
 
     .counter__button:disabled {
       opacity: 0.2;
+      cursor: not-allowed;
     }
 
     .counter__button:active {
-      background: var(--color-medium-grey);
+      background-color: var(--color-medium-grey);
       transform: translateY(2%);
     }
 
@@ -128,7 +128,7 @@ class TallyApp extends LitElement {
         <div class="counter__actions">
           <button
             data-key="subtract"
-            class="counter_button counter_button_first"
+            class="counter__button counter__button_first"
             @click="${this.decrement}"
             ?disabled="${this.count === -5}"
           >
