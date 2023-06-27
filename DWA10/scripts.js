@@ -47,4 +47,4 @@ add.addEventListener('click', addHandler)
 
 reset.addEventListener("click", resetHandler);
 
-reset.subtractEventListener("click", resetHandler);
+//reset.subtractEventListener("click", resetHandler);
